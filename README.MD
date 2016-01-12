@@ -1,0 +1,1 @@
+This is a sample code for creating another chat box using HTML5, CSS3 and JavaScript.

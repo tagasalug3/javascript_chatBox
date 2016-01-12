@@ -1,0 +1,41 @@
+* {
+    margin: 0px;
+    padding: 2px;
+}
+
+#chat_box {
+    width: 300px;
+    height: 100px;
+    border: 2px solid #6698d1;
+    border-radius: 10px;
+    overflow-y: scroll;
+    font-family: arial, sans-serif;
+}
+
+#text_field {
+    width: 300px;
+    margin-top: 20px;
+    font-family: arial, sans-serif;
+}
+
+#btn-send, #btn-clear {
+    margin-top: 20px;
+    width: 150px;
+    height: 20px;
+}
+
+#btn-clear {
+    width: 50px;
+}
+
+ul li {
+    list-style: none;
+}
+
+li { 
+    background: #fff; 
+}
+
+li:nth-child(odd) { 
+    background: #ddd; 
+}

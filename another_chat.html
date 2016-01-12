@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Another chat box</title>
+</head>
+<html>
+    
+<div id="chat_box"></div>
+    
+<input type="text" id="text_field">
+<br>
+<button id="btn-send" onclick="sendMsg()">Send</button>
+<button id="btn-clear" onclick="clearMsg()">Clear</button>
+
+<script> 
+"use strict";
+    
+var array = [];
+
+// Listen for enter key press. Another way to send the message to the chat box    
+document.querySelector('#text_field').addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { // 13 is enter
+     sendMsg();    
+    }
+});  
+        
+// Send message to the chat box on click of the submit button    
+function sendMsg(){
+    var getMsg = document.getElementById('text_field').value;
+    
+    if (getMsg === '') {
+        alert('Please type in a message.');
+        return;
+    }
+    
+    array.push(getMsg);
+    
+    var arrayMsg = "<ul>"
+        for (var i = 0; i < array.length; i++){
+           arrayMsg += "<li>"
+           arrayMsg += array[i]
+           arrayMsg += "</li>"
+        }
+    arrayMsg += "</ul>";
+    
+        
+    document.getElementById('chat_box').innerHTML = arrayMsg;
+    document.getElementById('text_field').value = '';
+    
+    // make the chat view automatically scroll up as more text are entered
+    var messageHeight = document.getElementById('chat_box').scrollHeight;
+    if (messageHeight !== 104){
+        document.getElementById('chat_box').scrollTop = messageHeight + 100;
+    }
+    
+    }
+    
+function clearMsg() {
+    document.getElementById('chat_box').innerHTML = '';
+    array = [];
+}    
+    
+</script>    
+    
+    
+</html>
